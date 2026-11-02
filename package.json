@@ -1,0 +1,46 @@
+{
+  "name": "vigc",
+  "version": "0.1.28",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "26.12.0",
+    "npm": "12.2.0"
+  },
+  "packageManager": "npm@12.2.0",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "agent": "node scripts/vigc.mjs",
+    "test:base": "node --test tests/base/*.test.ts",
+    "test:agent": "node --test tests/features/agent-cli.test.ts",
+    "test:onboarding": "node --test tests/base/*.test.ts tests/features/onboarding.test.ts tests/features/visibility-event.test.ts",
+    "test:tree": "node --test tests/base/*.test.ts tests/features/related-objects.test.ts",
+    "test:project-import": "node --test tests/base/*.test.ts tests/features/project-import.test.ts tests/features/agent-cli.test.ts",
+    "test:logic": "node --test tests/base/*.test.ts tests/features/logic-expression-types.test.ts",
+    "test:events": "node --test tests/base/*.test.ts tests/features/events.test.ts",
+    "test:playback": "node --test tests/base/*.test.ts tests/features/playback-ticks.test.ts",
+    "test:spatial": "node --test tests/base/*.test.ts tests/features/spatial-edit.test.ts",
+    "test:graph": "node --test tests/base/*.test.ts tests/features/node-graph.test.ts tests/features/compact-node-graph.test.ts"
+  },
+  "dependencies": {
+    "@tabler/icons-react": "3.50.0",
+    "@xyflow/react": "12.12.0",
+    "idb": "8.0.4",
+    "konva": "10.9.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-konva": "19.3.2",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  }
+}
